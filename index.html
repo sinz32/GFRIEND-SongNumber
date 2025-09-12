@@ -236,15 +236,16 @@ Season of Memories
 Always,,-,,44481,,-
 
 `.trim();
-src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td><td>JOYSOUND</td></tr>';
-ko.split('\n').forEach((e) => {
+ko.split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
 src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td><td>' + e[3] + '</td></tr>';
 }
 else {
+if (i > 0) src += '</table>';
+src += '<table>';
 src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 }
 });
@@ -284,7 +285,6 @@ La pam pam,,436856,,X
 Beautiful,,438641,,X
 My Buddy -JP ver.-,,-,,X
 
-
 回:LABYRINTH ~Crossroads~
 Crossroads -JP ver.-,,-,,X
 Labyrinth -JP ver.-,,-,,X
@@ -296,13 +296,15 @@ Tarot Cards -JP ver.-,,-,,X
 `.trim();
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>JOYSOUND</td><td>e-bo</td></tr>';
-jp.split('\n').forEach((e) => {
+jp.split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
 src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td></tr>';
 }
 else {
+if (i > 0) src += '</table>';
+src += '<table>';
 src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 }
 });
@@ -331,13 +333,15 @@ One Thing (Feat. 김다연 of Kep1er),,-,,-
 `.trim();
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
-yerin.split('\n').forEach((e) => {
+yerin.split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
 src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td></tr>';
 }
 else {
+if (i > 0) src += '</table>';
+src += '<table>';
 src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 }
 });
@@ -379,13 +383,15 @@ No Matter (Feat. GEMINI)-,,-,,
 `.trim();
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
-yuju.split('\n').forEach((e) => {
+yuju.split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
 src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td></tr>';
 }
 else {
+if (i > 0) src += '</table>';
+src += '<table>';
 src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 }
 });
@@ -445,13 +451,15 @@ Wildflower,,-,,-,,-
 `.trim();
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td><td>JOYSOUND</td></tr>';
-viviz.split('\n').forEach((e) => {
+viviz.split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
 src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td><td>' + e[3] + '</td></tr>';
 }
 else {
+if (i > 0) src += '</table>';
+src += '<table>';
 src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 }
 });
@@ -468,13 +476,15 @@ Rum Pum Pum,,24546,,82526
 `.trim();
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
-misc.split('\n').forEach((e) => {
+misc.split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
 src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td></tr>';
 }
 else {
+if (i > 0) src += '</table>';
+src += '<table>';
 src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 }
 });
