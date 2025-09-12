@@ -11,6 +11,7 @@
 html {
 	font-size: 20px;
     font-family: NanumBarunGothicLight;
+    color: #000;
 }
 body {
 	margin: 0px;
@@ -94,18 +95,18 @@ div.footer {
 	<!-- body -->
     <div class='body_outer'>
 		<div class='body'>
-            <table>
+            <table id="music_ko">
                 <tr><th colspan="4">미니 1집</th></tr>
                 <tr class="head">
                     <td>제목</td>
-                    <td class="mid">금영</td>
-                    <td class="mid">태진</td>
+                    <td>금영</td>
+                    <td>태진</td>
                     <td>JOYSOUND</td>
                 </tr>
                 <tr>
                     <td>유리구슬 (Glass Bead)</td>
-                    <td class="mid">48707</td>
-                    <td class="mid">39609</td>
+                    <td>48707</td>
+                    <td>39609</td>
                     <td>503141</td>
                 </tr>
             </table>
@@ -118,7 +119,23 @@ div.footer {
 		© 2024-2025 SinZ, All rights reserved.
 	</div>
 	
-	<script>
+<script>
+var ko = `
+미니 1집
+유리구슬 (Glass Bead),,48707,,39609,,503141
+`.trim();
+var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td><td>JOYSOUND</td></tr>';
+var src = '';
+ko.split('\n').forEach((e) => {
+if(e.includes(',,')) {
+e = e.split(',,');
+src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td><td>' + e[3] + '</td></tr>';
+}
+else {
+src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
+}
+});
+document.getElementById('music_ko').innerHTML = src;
 
 
 
