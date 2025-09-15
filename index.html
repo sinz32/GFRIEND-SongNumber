@@ -116,7 +116,7 @@ div.footer {
 (async function(){
 var src = '';
 
-const ko = await fetch('./music/ko.csv').then((res) => res.text())
+const ko = await fetch('./music/ko.csv').then((res) => res.text());
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td><td>JOYSOUND</td></tr>';
 ko.trim().split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
@@ -132,52 +132,10 @@ src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 });
 src += '</table>';
 
-var jp = `
-今日から私たちは ~GFRIEND 1st BEST~
-Glass Bead -JP ver.,,430252,,?
-今日から私たちは (Me Gustas Tu) -JP ver.,,428125,,X
-トキヲコエテ (Rough) -JP ver.,,430251,,?
-NAVILLERA -JP ver.,,430250,,X
-LOVE WHISPER -JP ver.,,430249,,X
-TRUST -JP ver.,,430248,,X
-
-Memoria/夜(Time for the moon night)
-Memoria,,433058,,X
-夜(Time for the moon night) -JP ver.,,434045,,X
-
-SUNRISE
-SUNRISE -JP ver.-,,507010,,O
-La pam pam,,436856,,X
-
-FLOWER
-FLOWER,,437785,,X
-Beautiful,,438641,,X
-
-Fallin' Light
-Fallin' Light (天使の梯子),,444794,,X
-Emotional Days,,445719,,X
-Memoria,,433058,,X
-恋の始まり,,-,,X
-FLOWER,,437785,,X
-My My My!,,-,,X
-夜(Time for the moon night) -JP ver.,,434045,,X
-SUNRISE -JP ver.-,,507010,,O
-La pam pam,,436856,,X
-Beautiful,,438641,,X
-My Buddy -JP ver.-,,-,,X
-
-回:LABYRINTH ~Crossroads~
-Crossroads -JP ver.-,,-,,X
-Labyrinth -JP ver.-,,-,,X
-
-回:Song of the Sirens ~Apple~
-Apple -JP ver.-,,-,,X
-Tarot Cards -JP ver.-,,-,,X
-
-`.trim();
+const jp = await fetch('./music/jp.csv').then((res) => res.text());
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>JOYSOUND</td><td>e-bo</td></tr>';
-jp.split('\n').forEach((e, i) => {
+jp.trim().split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
@@ -192,29 +150,10 @@ src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 src += '</table>';
 
 
-var yerin = `
-ARIA
-ARIA,,28772,,81672
-Believer,,-,,-
-Lalala,,-,,-
-시간 (Time),,-,,-
-
-Ready, Set, LOVE
-밤밤밤 (Bambambam),,-,,84475
-루프탑 (Summer Charm),,-,,-
-THE DANCE,,-,,-
-
-Rewrite
-Wavy,,71668,,43313
-볕뉘 (SHINE),,-,,-
-Permeate,,-,,-
-Save me,,-,,-
-One Thing (Feat. 김다연 of Kep1er),,-,,-
-4U,,-,,-
-`.trim();
+const yerin = await fetch('./music/yerin.csv').then((res) => res.text());
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
-yerin.split('\n').forEach((e, i) => {
+yerin.trim().split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
@@ -229,42 +168,10 @@ src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 src += '</table>';
 
 
-var yuju = `
-Love Rain
-Love Rain (Feat. 수란),,91885,,98094
-
-[REC.]
-Bad Blood (Intro)-,,-,,
-놀이(Play),,23614,,81078
-겨우, 겨울 (Feat. 매드클라운),,-,,81092
-데킬라 (The Killa),,-,,81129
-Blue Nostalgia-,,-,,
-
-이브닝
-이브닝 (Feat. BIG Naughty),,94038,,82066
-
-O
-9 Years-,,-,,
-Without U,,-,,83234
-꿈 (Dreaming)-,,-,,
-복숭아꽃 (feat.sokodomo)-,,-,,
-Full Circle-,,-,,
-
-따라랏 (DALALA)
-따라랏 (DALALA),,-,,84758
-
-In Bloom
-오리온자리-,,-,,
-REPLY,,-,,50335
-그날의 사건 (Feat. 정세운),,-,,50338
-moonstruck love-,,-,,
-No Matter (Feat. GEMINI)-,,-,,
-구름에 걸린 노을처럼-,,-,,
-
-`.trim();
+const yuju = await fetch('./music/yuju.csv').then((res) => res.text());
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
-yuju.split('\n').forEach((e, i) => {
+yuju.trim().split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
@@ -279,60 +186,10 @@ src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 src += '</table>';
 
 
-var viviz = `
-Beam Of Prism
-BOP BOP!,,23715,,81179,,-
-Fiesta,,-,,-,,-
-Tweet Tweet,,-,,-,,-
-Lemonade,,-,,-,,-
-Love You Like,,-,,81183,,-
-거울아,,-,,81199,,-
-
-Summer Vibe
-LOVEADE,,24223,,81917,,-
-SIESTA,,-,,-,,-
-Party Pop,,-,,-,,-
-Love Love Love,,-,,81953,,-
-#FLASHBACK,,-,,-,,-
-춤,,-,,-,,-
-
-VarioUS
-PULL UP,,24736,,83030,,-
-Blue Clue,,-,,83049,,-
-Love or Die,,-,,-,,-
-Vanilla Sugar Killer,,-,,-,,-
-Overdrive,,-,,-,,-
-So Special,,-,,-,,-
-
-VERSUS
-MANIAC,,-,,85209,,622543,,-
-Untie,,75158,,86310,,-
-Overflow,,-,,-,,-
-한 걸음 (Day by day),,-,,-,,-
-Up 2 Me,,-,,-,,-
-
-VOYAGE
-Shhh!,,71865,,43869,,-
-Cliché,,-,,-,,-
-Full Moon,,-,,-,,-
-Hypnotize,,-,,-,,-
-Love & Tears,,-,,-,,-
-
-A Montage of ( )
-La La Love Me,,-,,50031,,-
-Hands Off My Heart,,-,,50033,,-
-Citrus,,-,,50046,,-
-Sticker,,-,,-,,-
-Toxic,,-,,-,,-
-Hipnotic (SINB Solo),,-,,-,,-
-Love Language (UMJI Solo),,-,,-,,-
-Milky Way (EUNHA Solo),,-,,-,,-
-Wildflower,,-,,-,,-
-
-`.trim();
+const viviz = await fetch('./music/viviz.csv').then((res) => res.text());
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td><td>JOYSOUND</td></tr>';
-viviz.split('\n').forEach((e, i) => {
+viviz.trim().split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
@@ -346,20 +203,10 @@ src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
 });
 src += '</table>';
 
-var misc = `
-기타 수록곡
-주머니 속 편지 (Full Ver.),,76287,,48668
-
-환상 (Red Sun!),,-,,81808
-Rum Pum Pum,,24546,,82526
-
-우연히 봄 (로꼬, 유주),,48788,,29110
-우연히 봄 (유주 솔로),,-,,49093
-
-`.trim();
+const misc = await fetch('./music/misc.csv').then((res) => res.text());
 src += '<table>';
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
-misc.split('\n').forEach((e, i) => {
+misc.trim().split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
