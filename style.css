@@ -1,0 +1,82 @@
+html {
+	font-size: 20px;
+    font-family: NanumBarunGothicLight;
+    color: #000;
+}
+body {
+	margin: 0px;
+}
+div.title {
+    position: fixed;
+	padding: 8px;
+	top: 0;
+	width: 100%;
+    z-index: 4;
+	font-size: 1.rem;
+	font-weight: bold;
+	color: #FFF;
+	background-color: #5F4B8B;
+	display: flex;
+	align-items: center;
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.3);
+}
+div.title > i {
+	padding: 8px;
+}
+div.title > span {
+	padding: 8px;
+}
+
+div.body_outer {
+	margin: 54px auto 0px;
+	padding: 16px;
+	max-width: 768px;
+}
+div.body {
+	padding: 16px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+th {
+    text-align: start;
+    padding: 8px 32px;
+    font-size: 20px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #00ABC0;
+    font-weight: bold;
+}
+.head>td {
+    text-align: center;
+    padding: 8px;
+    font-size: 18px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #F0EEE9;
+    font-weight: bold;
+}
+td {
+    text-align: center;
+    padding: 8px;
+    font-size: 18px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #FFF;
+}
+
+
+div.footer {
+	padding: 8px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    td, .head>td {
+        font-size: 16px;
+    }
+}
