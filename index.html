@@ -113,131 +113,12 @@ div.footer {
 	</div>
 	
 <script>
+(async function(){
 var src = '';
 
-var ko = `
-Season of Glass
-유리구슬 (Glass Bead),,48707,,39609,,503141
-Nevecrland,,-,,-,,-
-White (하얀마음),,-,,-,,-
-
-Flower Bud
-오늘부터 우리는 (Me gustas tu),,48892,,29568, 62359,,503296
-하늘 아래서,,-,,-,,-
-ONE,,-,,-,,-
-기억해 (My Buddy),,-,,48160,,-
-
-SNOWFLAKE
-시간을 달려서 (Rough),,49076,,45993, 62388,,503450
-내 이름을 불러줘 (Say My Name),,78659,,96246,,-
-사랑별 (Luv Star),,78648,,46177,,-
-그런 날엔 (Someday),,78652,,96246,,-
-TRUST,,59957,,46000,,-
-
-LOL
-물들어요 (Fall in Love),,88750,,46683,,-
-너 그리고 나 (NAVILLERA),,78915,,46670,,503743
-LOL,,78995,,48590,,506588
-한 뼘 (Distance),,-,,-,,-
-물꽃놀이 (Water Flower),,78991,,48164,,-
-Mermaid,,88755,,46925,,-
-나의 일기장 (Sunshine),,-,,-,,-
-나침반 (Compas),,-,,-,,-
-찰칵 (Click),,-,,-,,-
-바람에 날려 (Gone with the wind),,78954,,46785,,-
-
-THE AWAKENING
-바람의 노래 (Hear The Wind Sing),,90007,,48794,,-
-FINGERTIP,,76333,,48786,,506431
-비행운:飛行雲 (Contrail),,90077,,49736,,-
-나의 지구를 지켜줘 (Please Save My Earth),,90072,,49886,,-
-봄비 (Rain In The Spring Time),,90154,,49878,,-
-핑 (Crush),,-,,-,,-
-
-PARALLEL & RAINBOW
-귀를 기울이면 (LOVE WHISPER),,90414,,96276,,506149
-두 손을 모아 (AVE MARIA),,90437,,96325,,-
-이분의 일 1/2 (ONE-HALF),,90448,,96298,,-
-LIFE IS A PARTY,,-,,-,,-
-빨간 우산 (RED UMBRELLA),,-,,-,,-
-그루잠 (FALLING ASLEEP AGAIN),,90467,,96563,,-
-여름비 (SUMMER RAIN),,49669,,96483,,506202,,-
-RAINBOW,,90555,,97745,,-
-
-Time for the moon night
-밤 (Time for the moon night),,91637,,97759,,506614
-Love Bug,,91664,,97791,,-
-휘리휘리 (Flower Garden),,91663,,97768,,-
-틱틱 (Tik Tik),,-,,-,,-
-Bye,,91788,,98513,,-
-별 (You are my star),,-,,-,,-
-
-Sunny Summer
-여름여름해 (Sunny Summer),,49969,,98206,,-
-Vacation,,89716,,98217,,-
-Sweety,,89729,,98922,,-
-바람 바람 바람 (Windy Windy),,76354,,98227,,-
-Love In The Air,,-,,-,,-
-
-Time for us
-해야 (Sunrise),,79739,,99850,,436858
-You are not alone,,93810,,99853,,-
-기적을 넘어 (L.U.V.),,-,,-,,-
-GLOW (만화경),,-,,-,,-
-비밀 이야기 (Our Secret),,-,,-,,-
-Only 1,,-,,-,,-
-Truly Love,,-,,-,,-
-보호색 (Show Up),,-,,-,,-
-겨울, 끝 (It's You),,-,,-,,-
-A Starry Sky,,-,,-,,-
-Love Oh Love,,-,,91858,,-
-Memoria (Korean Ver.),,75689,,-,,-
-
-FEVER SEASON
-열대야 (Fever),,98678,,91639,,507169
-Mr. Blue,,-,,-,,-
-좋은 말 할 때 (Smile),,-,,-,,-
-바라 (Wish),,-,,-,,-
-Paradise,,-,,-,,-
-기대 (Hope),,-,,-,,-
-FLOWER (Korean Ver.),,29922,,85124,,-
-
-回:LABYRINTH
-Labyrinth,,94085,,54971,,-
-교차로 (Crossroads),,21482,,54970, 62771,,507327
-Here We Are,,-,,89030,,-
-지금 만나러 갑니다 (Eclipse),,-,,54978,,-
-Dreamcatcher,,-,,-,,-
-From Me,,-,,89327,,-
-
-回:Song of the Sirens
-Apple,,21986,,75342,,507362
-눈의 시간,,22028,,75433,,-
-거울의 방,,-,,75356,,-
-Tarot Cards,,29754,,75367,,-
-Crème Brûlée,,-,,75368,,-
-북쪽 계단,,-,,75346,,-
-
-回:Walpurgis Night
-MAGO,,22305,,75912,,507385
-Love Spell,,-,,-,,-
-Three Of Cups,,-,,44241,,-
-GRWM,,-,,-,,-
-Secret Diary,,-,,75929,,-
-Better Me,,29884,,75925,,-
-Night Drive,,-,,75968,,-
-Apple,,21986,,75342,,507362
-교차로 (Crossroads),,21482,,54970, 62771,,507327
-Labyrinth,,94085,,54971,,-
-앞면의 뒷면의 뒷면,,-,,-,,-
-
-Season of Memories
-우리의 다정한 계절 속에 (Season of Memories),,74719,,44413,,633764
-Always,,-,,44481,,-
-
-`.trim();
+const ko = await fetch('./music/ko.csv').then((res) => res.text())
 var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td><td>JOYSOUND</td></tr>';
-ko.split('\n').forEach((e, i) => {
+ko.trim().split('\n').forEach((e, i) => {
 if (e.trim() == '') return;
 if(e.includes(',,')) {
 e = e.split(',,');
@@ -495,7 +376,7 @@ src += '</table>';
 
 document.getElementById('music_list').innerHTML = src;
 
-
+})();
 
 </script>
 </body>
