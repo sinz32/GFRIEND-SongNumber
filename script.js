@@ -16,10 +16,10 @@
     });
     src += '</table>';
 
-    const jp = await fetch('./music/jp.csv').then((res) => res.text());
+    const ja = await fetch('./music/ja.csv').then((res) => res.text());
     src += '<table>';
     var head = '<tr class="head"><td>제목</td><td>JOYSOUND</td><td>e-bo</td></tr>';
-    jp.trim().split('\n').forEach((e, i) => {
+    ja.trim().split('\n').forEach((e, i) => {
         if (e.trim() == '') return;
         if (e.includes(',,')) {
             e = e.split(',,');
