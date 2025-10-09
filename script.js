@@ -33,72 +33,23 @@
     src += '</table>';
 
 
-    const yerin = await fetch('./music/yerin.csv?ts=' + Date.now()).then((res) => res.text());
-    src += '<table>';
-    var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
-    yerin.trim().split('\n').forEach((e, i) => {
-        if (e.trim() == '') return;
-        if (e.includes(',,')) {
-            e = e.split(',,');
-            src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td></tr>';
-        } else {
-            if (i > 0) src += '</table>';
-            src += '<table>';
-            src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
-        }
-    });
-    src += '</table>';
-
-
-    const yuju = await fetch('./music/yuju.csv?ts=' + Date.now()).then((res) => res.text());
-    src += '<table>';
-    var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
-    yuju.trim().split('\n').forEach((e, i) => {
-        if (e.trim() == '') return;
-        if (e.includes(',,')) {
-            e = e.split(',,');
-            src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td></tr>';
-        } else {
-            if (i > 0) src += '</table>';
-            src += '<table>';
-            src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
-        }
-    });
-    src += '</table>';
-
-
-    const viviz = await fetch('./music/viviz.csv?ts=' + Date.now()).then((res) => res.text());
-    src += '<table>';
-    var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td><td>JOYSOUND</td></tr>';
-    viviz.trim().split('\n').forEach((e, i) => {
-        if (e.trim() == '') return;
-        if (e.includes(',,')) {
-            e = e.split(',,');
-            src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td><td>' + e[3] + '</td></tr>';
-        } else {
-            if (i > 0) src += '</table>';
-            src += '<table>';
-            src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
-        }
-    });
-    src += '</table>';
-
-    const misc = await fetch('./music/misc.csv?ts=' + Date.now()).then((res) => res.text());
-    src += '<table>';
-    var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
-    misc.trim().split('\n').forEach((e, i) => {
-        if (e.trim() == '') return;
-        if (e.includes(',,')) {
-            e = e.split(',,');
-            src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td></tr>';
-        } else {
-            if (i > 0) src += '</table>';
-            src += '<table>';
-            src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
-        }
-    });
-    src += '</table>';
-
+    for (var e of ['yerin', 'yuju', 'viviz', 'misc']) {
+        const music = await fetch('./music/'+ e +'.csv?ts=' + Date.now()).then((res) => res.text());
+        src += '<table>';
+        const head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
+        music.trim().split('\n').forEach((e, i) => {
+            if (e.trim() == '') return;
+            if (e.includes(',,')) {
+                e = e.split(',,');
+                src += '<tr><td>' + e[0] + '</td><td>' + e[1] + '</td><td>' + e[2] + '</td></tr>';
+            } else {
+                if (i > 0) src += '</table>';
+                src += '<table>';
+                src += '<tr><th colspan="4">' + e + '</th></tr>' + head;
+            }
+        });
+        src += '</table>';
+    };
 
     document.getElementById('music_list').innerHTML = src;
 
