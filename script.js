@@ -33,7 +33,7 @@
     src += '</table>';
 
 
-    const yerin = await fetch('./music/yerin.csv').then((res) => res.text());
+    const yerin = await fetch('./music/yerin.csv?ts=' + Date.now()).then((res) => res.text());
     src += '<table>';
     var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
     yerin.trim().split('\n').forEach((e, i) => {
@@ -50,7 +50,7 @@
     src += '</table>';
 
 
-    const yuju = await fetch('./music/yuju.csv').then((res) => res.text());
+    const yuju = await fetch('./music/yuju.csv?ts=' + Date.now()).then((res) => res.text());
     src += '<table>';
     var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
     yuju.trim().split('\n').forEach((e, i) => {
@@ -67,7 +67,7 @@
     src += '</table>';
 
 
-    const viviz = await fetch('./music/viviz.csv').then((res) => res.text());
+    const viviz = await fetch('./music/viviz.csv?ts=' + Date.now()).then((res) => res.text());
     src += '<table>';
     var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td><td>JOYSOUND</td></tr>';
     viviz.trim().split('\n').forEach((e, i) => {
@@ -83,7 +83,7 @@
     });
     src += '</table>';
 
-    const misc = await fetch('./music/misc.csv').then((res) => res.text());
+    const misc = await fetch('./music/misc.csv?ts=' + Date.now()).then((res) => res.text());
     src += '<table>';
     var head = '<tr class="head"><td>제목</td><td>금영</td><td>태진</td></tr>';
     misc.trim().split('\n').forEach((e, i) => {
