@@ -30,6 +30,13 @@
 	</div>
 	
     <script src='./script.js'></script>
+	<script>		
+		if (window.SinZ) {
+			document.querySelector("div.title").style.display = 'none';
+			document.querySelector('div.body_outer').style.marginTop = '0px';
+			document.querySelector('div.body_outer').style.padding = '0px';
+		}
+	</script>
 </body>
 
 </html>
