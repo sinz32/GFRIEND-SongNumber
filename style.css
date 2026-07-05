@@ -1,6 +1,6 @@
 html {
 	font-size: 20px;
-    font-family: NanumBarunGothicLight;
+    font-family: NanumBarunGothic;
     color: #000;
 }
 body {
@@ -67,6 +67,9 @@ td {
     border-bottom: 1px solid #000;
     background-color: #FFF;
 }
+td.mid {
+    border-left: 1px solid #000;
+}
 
 
 div.footer {
@@ -75,8 +78,19 @@ div.footer {
     text-align: center;
 }
 
+div#music_list_mobile {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     td, .head>td {
         font-size: 16px;
+    }
+    div#music_list_pc {
+        display: none;
+    }
+    div#music_list_mobile {
+        display: block;
+		max-width: 768px;
     }
 }
